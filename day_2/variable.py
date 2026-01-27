@@ -42,7 +42,7 @@ floor_division = num_one//num_two
 radius = 30
 area_of_circle = 3.1416*(radius**2)
 circum_of_circle =2*3.1416*radius
-radius_input = int(input('Input the Radius of circle:\n'))25
+radius_input = int(input('Input the Radius of circle:\n'))
 area_of_circle = 3.1416 *(radius_input**2)
 print('Area of circle is:\n',area_of_circle)
 
