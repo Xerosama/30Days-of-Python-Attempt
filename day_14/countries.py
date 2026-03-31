@@ -1,220 +1,202 @@
-# Day 11 exercises
-
-#Exercise Level 1
-
-# Question 1 to 5
-def add_two_numbers(num1, num2):
-    sum = num1 +num2
-    return sum
-
-def area_of_circle(radius):
-    area = 3.14159*(radius)**2
-    return area
-
-def add_all_nums(*nums):
-    sum =0
-    for num in nums:
-        sum+=num
-    return sum
-
-def convert_celsius_to_fahrenheit(temp_c):
-    temp_f = temp_c*1.8 +32
-    return temp_f
-
-def check_season(month):
-    if month in ['November','December','January']:
-        return 'Winter'
-    elif month in ['February','March','April']:
-        return 'Spring'
-    elif month in ['May','June','July','August']:
-        return 'Summer'
-    elif month in ['September','October']:
-        return 'Autumn'
-
-#Question 6 to 10
-
-def calculate_slope(a,b,c):
-    slope = -a/b
-    return slope
-
-def solve_quadratic_eqn(a,b,c):
-    sol1 = (-b +(b**2 -(4*a*c))**0.5 )/(2*a)
-    sol2 = (-b -(b**2 -(4*a*c))**0.5 )/(2*a)
-    sol_set = {sol1, sol2}
-    return sol_set
-
-def print_list(in_list):
-    for element in in_list:
-        print(element)
-
-def reverse_list(in_list):
-    out_list = []
-    for element in in_list[-1::-1]:
-        out_list.append(element)
-    return out_list
-
-def capitalize_list_items(in_list):
-    out_list =[]
-    for element in in_list:
-        out_list.append(element.upper()) 
-    return out_list
-
-# Question 11 to 15
-
-def add_item(in_list,*parameters):
-    for item in parameters:
-        in_list.append(item)
-    return in_list
-
-def remove_item(in_list,para):
-    in_list.remove(para)
-    return in_list
-
-def sum_of_numbers(num):
-    sum = 0
-    for i in range(num+1):
-        sum+=i
-    return sum
-
-def sum_of_odds(num):
-    sum = 0
-    for i in  range(num+1):
-        if i%2 ==1:
-            sum+=i
-
-def sum_of_even(num):
-    sum = 0
-    for i in  range(num+1):
-        if i%2 ==0:
-            sum+=i
-
-# Exercise Level 2
-
-#Question 1 to 3
-
-def even_and_odds(num):
-    count_even = (num//2) +1 
-    count_odd = num//2 + num%2
-    return count_even, count_odd
-
-def factorial(num):
-    out = 1
-    for i in range(num//1 +1):
-        out*=i
-    return out
-
-def is_empty(para):
-    out = len(para)==0
-    return out
-
-def calculate_mean(in_list):
-    sum = 0
-    for i in in_list:
-        sum+=i
-    mean = sum/ len(in_list)
-    return mean
-
-def calculate_median(in_list):
-    sorted(in_list)
-    median = in_list(len(in_list)//2)
-    return median
-
-def calculate_mode(in_list):
-    count_dict = {}
-    
-    for element in in_list:
-        if element in count_dict:
-            count_dict[element]+=1
-        else:
-            count_dict[element] =1
-   
-    count_list = list(count_dict.items())
-    sorted_list=sorted(count_list,key=lambda x:x[1], reverse = True)
-    mode = []
-    for i in sorted_list:
-        if sorted_list[0][1]==sorted_list[i][1]:
-            mode.append(sorted_list[i][0])
-        else:
-            break
-    return mode
-
-def calculate_range(in_list):
-    max_value = max(in_list)
-    min_value = min(in_list)
-    return min_value, max_value
-
-def calculate_variance(in_list):
-    bar = calculate_mean(in_list)
-    term_list = []
-    for i in in_list:
-        term_list.append((i-bar)**2)
-    variance = calculate_mean(term_list)
-    return variance
-
-def calculate_std(in_list):
-    bar = calculate_mean(in_list)
-    term_list = []
-    for i in in_list:
-        term_list.append((i-bar)**2)
-    stdev = (calculate_mean(term_list))**0.5
-    return stdev
-
-# Question 4 to 5
-
-def greet(name):
-    if name :
-        print(f'Hello, {name}!')
-    else:
-        print('Hello, Guest!')
-        
-def show_args(**args):
-    for k,v in args.items():
-        print(f'{k}:{v}',end=', ')
-
-
-# Exercise Level 3
-# Question 1 
-
-def is_prime(num):
-    limit = int(num**0.5) +1
-    if num <1 :
-        return False
-    elif num%2 ==0 or num%3==0:
-        return False
-    # All prime no. greater than 3 are of form 6k+1 or 6k-1
-    # To check prime we check divisibility by all prime numbers smaller than sqrt(n).
-    i =5
-    while i*i < num:
-        if num%i==0 or num%(i+2)==0:
-            return False
-        i+=6
-    return True
-
-# Question 2 to 3 
-def unique_list(in_list):
-    in_set=set(in_list)
-    if len(in_set)==len(in_list):
-        return True
-    return False
-
-def is_sametype(in_list):
-    for i in range(len(in_list)):
-        if type(in_list[0])!=type(in_list[i]):
-            return False
-    return True
-
-#Question 4 
-
-
-def check_vname(name):
-    if name.isidentifier() :
-        return True
-    else:
-        return False
-print(check_vname('1eep_2'))
-
-#Question 5
 countries = [
+  'Afghanistan',
+  'Albania',
+  'Algeria',
+  'Andorra',
+  'Angola',
+  'Antigua and Barbuda',
+  'Argentina',
+  'Armenia',
+  'Australia',
+  'Austria',
+  'Azerbaijan',
+  'Bahamas',
+  'Bahrain',
+  'Bangladesh',
+  'Barbados',
+  'Belarus',
+  'Belgium',
+  'Belize',
+  'Benin',
+  'Bhutan',
+  'Bolivia',
+  'Bosnia and Herzegovina',
+  'Botswana',
+  'Brazil',
+  'Brunei',
+  'Bulgaria',
+  'Burkina Faso',
+  'Burundi',
+  'Cabo Verde',
+  'Cambodia',
+  'Cameroon',
+  'Canada',
+  'Central African Republic',
+  'Chad',
+  'Chile',
+  'China',
+  'Colombia',
+  'Comoros',
+  'Congo, Democratic Republic of the',
+  'Congo, Republic of the',
+  'Costa Rica',
+  "Côte d'Ivoire",
+  'Croatia',
+  'Cuba',
+  'Cyprus',
+  'Czech Republic',
+  'Denmark',
+  'Djibouti',
+  'Dominica',
+  'Dominican Republic',
+  'East Timor (Timor-Leste)',
+  'Ecuador',
+  'Egypt',
+  'El Salvador',
+  'Equatorial Guinea',
+  'Eritrea',
+  'Estonia',
+  'Eswatini',
+  'Ethiopia',
+  'Fiji',
+  'Finland',
+  'France',
+  'Gabon',
+  'Gambia',
+  'Georgia',
+  'Germany',
+  'Ghana',
+  'Greece',
+  'Grenada',
+  'Guatemala',
+  'Guinea',
+  'Guinea-Bissau',
+  'Guyana',
+  'Haiti',
+  'Honduras',
+  'Hungary',
+  'Iceland',
+  'India',
+  'Indonesia',
+  'Iran',
+  'Iraq',
+  'Ireland',
+  'Israel',
+  'Italy',
+  'Jamaica',
+  'Japan',
+  'Jordan',
+  'Kazakhstan',
+  'Kenya',
+  'Kiribati',
+  'Korea, North',
+  'Korea, South',
+  'Kuwait',
+  'Kyrgyzstan',
+  'Laos',
+  'Latvia',
+  'Lebanon',
+  'Lesotho',
+  'Liberia',
+  'Libya',
+  'Liechtenstein',
+  'Lithuania',
+  'Luxembourg',
+  'Madagascar',
+  'Malawi',
+  'Malaysia',
+  'Maldives',
+  'Mali',
+  'Malta',
+  'Marshall Islands',
+  'Mauritania',
+  'Mauritius',
+  'Mexico',
+  'Micronesia',
+  'Moldova',
+  'Monaco',
+  'Mongolia',
+  'Montenegro',
+  'Morocco',
+  'Mozambique',
+  'Myanmar',
+  'Namibia',
+  'Nauru',
+  'Nepal',
+  'Netherlands',
+  'New Zealand',
+  'Nicaragua',
+  'Niger',
+  'Nigeria',
+  'North Macedonia',
+  'Norway',
+  'Oman',
+  'Pakistan',
+  'Palau',
+  'Palestine',
+  'Panama',
+  'Papua New Guinea',
+  'Paraguay',
+  'Peru',
+  'Philippines',
+  'Poland',
+  'Portugal',
+  'Qatar',
+  'Romania',
+  'Russia',
+  'Rwanda',
+  'Saint Kitts and Nevis',
+  'Saint Lucia',
+  'Saint Vincent and the Grenadines',
+  'Samoa',
+  'San Marino',
+  'Sao Tome and Principe',
+  'Saudi Arabia',
+  'Senegal',
+  'Serbia',
+  'Seychelles',
+  'Sierra Leone',
+  'Singapore',
+  'Slovakia',
+  'Slovenia',
+  'Solomon Islands',
+  'Somalia',
+  'South Africa',
+  'South Sudan',
+  'Spain',
+  'Sri Lanka',
+  'Sudan',
+  'Suriname',
+  'Sweden',
+  'Switzerland',
+  'Syria',
+  'Tajikistan',
+  'Tanzania',
+  'Thailand',
+  'Togo',
+  'Tonga',
+  'Trinidad and Tobago',
+  'Tunisia',
+  'Turkey',
+  'Turkmenistan',
+  'Tuvalu',
+  'Uganda',
+  'Ukraine',
+  'United Arab Emirates',
+  'United Kingdom',
+  'United States',
+  'Uruguay',
+  'Uzbekistan',
+  'Vanuatu',
+  'Vatican City',
+  'Venezuela',
+  'Vietnam',
+  'Yemen',
+  'Zambia',
+  'Zimbabwe'
+]
+
+countries_data=[
     {
         "name": "Afghanistan",
         "capital": "Kabul",
@@ -2834,30 +2816,3 @@ countries = [
         "currency": "Botswana pula"
     }
 ]
-
-def most_spoken_languages(countries,top_n):
-    
-    lang_dict = {}
-    for country in countries:
-        for language in country['languages']:
-            if language in lang_dict:
-                lang_dict[language]+=1
-            else:
-                lang_dict[language]=1
-    lang_count_list = list(lang_dict.items())
-    lang_sort_list = sorted(lang_count_list, key = lambda x:x[1], reverse = True)
-    return lang_sort_list[:top_n]
-
-print(most_spoken_languages(countries,20))
-
-def most_populated_countries(countries,top_n):
-    pop_dict={}
-    for country in countries:
-        if 'population' in country:
-            pop_dict[country['name']]= country['population']
-    
-    pop_list = list(pop_dict.items())
-    pop_sort_list = sorted(pop_list, key = lambda x:x[1], reverse=True)
-    return pop_sort_list[:top_n]
-
-print(most_populated_countries(countries,10))

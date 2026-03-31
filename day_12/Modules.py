@@ -96,7 +96,7 @@ def shuffle_list(in_list):
 
 #Exercise Level 3
 # Question 1
-print(shuffle_list([0,1,2,3,4,'A']))
+print(shuffle_list([0,1,1,2,3,4,'A']))
 
 # Question 2
 def random_num_generate():
