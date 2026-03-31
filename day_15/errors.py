@@ -1,0 +1,1 @@
+# There are no questions in Day 15 exercise. It only tells to try out the errors in terminal REPL
